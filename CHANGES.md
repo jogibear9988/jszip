@@ -4,6 +4,10 @@ layout: default
 section: main
 ---
 
+### v4.0.0 2025-09-14
+- Completely switch to ESM modules and modern javascript code.
+- remove support for old browsers, node, ... it now needs promises, imports, ....
+
 ### v3.10.1 2022-08-02
 
 - Add sponsorship files.

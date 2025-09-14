@@ -62,6 +62,12 @@ if(!JSZip.support.blob) {
         }
     };
 }
+
+const response = await fetch('./jszip.zip');
+const arrayBuffer = await response.arrayBuffer();
+  // Mit JSZip laden
+const zip = await JSZip.loadAsync(arrayBuffer);
+debugger;
 </script>
 <textarea class="form-control" id="demo-code" rows="9" spellcheck="false">
 var zip = new JSZip();
@@ -88,12 +94,6 @@ zip.generateAsync({type:"blob"})
   <strong>With npm</strong> : <code>npm install jszip</code>
 </p>
 <p>
-  <strong>With bower</strong> : <code>bower install Stuk/jszip</code>
-</p>
-<p>
-  <strong>With component</strong> : <code>component install Stuk/jszip</code>
-</p>
-<p>
   <strong>Manually</strong> : <a href="https://github.com/Stuk/jszip/zipball/main">download JSZip</a>
   and include the file <code>dist/jszip.js</code> or <code>dist/jszip.min.js</code>
 </p>
@@ -109,11 +109,10 @@ zip.generateAsync({type:"blob"})
 
 <table class="browser_support">
   <tr>
-    <th class="support_op">Opera</th>
+    <th class="support_cr">Chrome</th>
+    <th class="support_op">Edge</th>
     <th class="support_ff">Firefox</th>
     <th class="support_sf">Safari</th>
-    <th class="support_cr">Chrome</th>
-    <th class="support_ie">Internet Explorer</th>
     <th class="support_nd">Node.js</th>
   </tr>
   <tr>
@@ -122,15 +121,13 @@ zip.generateAsync({type:"blob"})
     <td>Yes</td>
     <td>Yes</td>
     <td>Yes</td>
-    <td>Yes</td>
   </tr>
   <tr>
     <td>Tested with the latest version</td>
-    <td>Tested with 3.0 / 3.6 / latest version</td>
     <td>Tested with the latest version</td>
     <td>Tested with the latest version</td>
-    <td>Tested with IE 6 / 7 / 8 / 9 / 10</td>
-    <td>Tested with node.js 0.10 / latest version</td>
+    <td>Tested with the latest version</td>
+    <td>Tested with node.js 22</td>
   </tr>
 </table>
 
