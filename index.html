@@ -62,12 +62,6 @@ if(!JSZip.support.blob) {
         }
     };
 }
-
-const response = await fetch('./jszip.zip');
-const arrayBuffer = await response.arrayBuffer();
-  // Mit JSZip laden
-const zip = await JSZip.loadAsync(arrayBuffer);
-debugger;
 </script>
 <textarea class="form-control" id="demo-code" rows="9" spellcheck="false">
 var zip = new JSZip();
