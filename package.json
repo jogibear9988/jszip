@@ -1,5 +1,5 @@
 {
-  "name": "jszip",
+  "name": "@node-projects/jszip",
   "version": "4.00.0",
   "author": "Stuart Knightley <stuart@stuartk.com>",
   "description": "Create, read and edit .zip files with JavaScript http://stuartk.com/jszip",
@@ -29,10 +29,6 @@
   ],
   "type": "module",
   "main": "./lib/index.js",
-  "browser": {
-    "./lib/index": "./dist/jszip.min.js",
-    "readable-stream": "./lib/readable-stream-browser.js"
-  },
   "types": "./index.d.ts",
   "repository": {
     "type": "git",
@@ -61,8 +57,7 @@
     "@web/dev-server": "^0.4.6"
   },
   "dependencies": {
-    "pako": "^2.1.0",
-    "readable-stream": "~2.3.6"
+    "pako": "^2.1.0"
   },
   "license": "(MIT OR GPL-3.0-or-later)"
 }
