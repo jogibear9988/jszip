@@ -1,4 +1,4 @@
-// Type definitions for JSZip 4.1.0
+// Type definitions for JSZip 4.1.1
 // Project: http://stuk.github.com/jszip/, https://github.com/stuk/jszip
 // Definitions by: mzeiher <https://github.com/mzeiher>, forabi <https://github.com/forabi>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
