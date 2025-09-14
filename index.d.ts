@@ -1,4 +1,4 @@
-// Type definitions for JSZip 4.0.1
+// Type definitions for JSZip 4.0.2
 // Project: http://stuk.github.com/jszip/, https://github.com/stuk/jszip
 // Definitions by: mzeiher <https://github.com/mzeiher>, forabi <https://github.com/forabi>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
@@ -325,4 +325,6 @@ interface JSZip {
 
 declare var JSZip: JSZip;
 
-export default JSZip;
+declare module "@node-projects/jszip" {
+    export default JSZip;
+}
