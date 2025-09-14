@@ -1,3 +1,13 @@
+<script type="importmap">
+    {
+        "imports": {
+            "jszip": "/lib/index.js",
+            "jszip/": "/lib/",
+
+            "pako": "/node_modules/pako/dist/pako.esm.mjs"
+        }
+    }
+</script>
 ---
 title: JSZip
 layout: default
@@ -27,32 +37,31 @@ lovely and simple API.
 
 <h3>Example</h3>
 
-<script type="text/javascript">
-imgData = "R0lGODdhBQAFAIACAAAAAP/eACwAAAAABQAFAAACCIwPkWerClIBADs=";
+<script type="module">
+import { JSZip } from 'jszip';
 
-jQuery(function($) {
-  if(!JSZip.support.blob) {
-      $("#demo-not-supported").removeClass("hidden");
-      $("#demo").hide();
-      return;
-  }
-  $("#demo").click(function () {
-      try {
-          eval($("#demo-code").val());
-          $("#status")
-          .removeClass()
-          .addClass("text-success")
-          .text("Done!");
-      }
-      catch (e) {
-          $("#status")
-          .removeClass()
-          .addClass("text-danger")
-          .text(e);
-      }
-  });
-});
+let imgData = "R0lGODdhBQAFAIACAAAAAP/eACwAAAAABQAFAAACCIwPkWerClIBADs=";
 
+if(!JSZip.support.blob) {
+  document.getElementById('demo-not-supported').classList.remove('hidden');
+  document.getElementById('demo').style.display = 'none';
+} else {
+    document.getElementById('demo').onclick = () => {
+        try {
+            eval($("#demo-code").val());
+            $("#status")
+            .removeClass()
+            .addClass("text-success")
+            .text("Done!");
+        }
+        catch (e) {
+            $("#status")
+            .removeClass()
+            .addClass("text-danger")
+            .text(e);
+        }
+    };
+}
 </script>
 <textarea class="form-control" id="demo-code" rows="9" spellcheck="false">
 var zip = new JSZip();
