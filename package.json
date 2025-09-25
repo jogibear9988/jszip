@@ -1,6 +1,6 @@
 {
   "name": "@node-projects/jszip",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "author": "Stuart Knightley <stuart@stuartk.com>",
   "description": "Create, read and edit .zip files with JavaScript http://stuartk.com/jszip",
   "scripts": {
@@ -11,7 +11,10 @@
     "benchmark-node": "node test/benchmark/node.js",
     "benchmark-browser": "node test/run.js --benchmark",
     "lint": "eslint .",
-    "start": "web-dev-server --open"
+    "start": "web-dev-server --open",
+    "prepublishOnly": "npm run build && npm run bundle",
+    "bundle": "esbuild ./lib/index.js --format=esm --minify --external:pako --platform=neutral --bundle --outfile=./dist/index-min.js"
+  
   },
   "contributors": [
     {
@@ -42,6 +45,7 @@
   "devDependencies": {
     "benchmark": "^2.1.4",
     "browserify": "~13.0.0",
+    "esbuild": "^0.25.10",
     "eslint": "^8.18.0",
     "grunt": "~0.4.1",
     "grunt-browserify": "~5.0.0",
