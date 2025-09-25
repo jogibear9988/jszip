@@ -12,7 +12,7 @@
     "benchmark-browser": "node test/run.js --benchmark",
     "lint": "eslint .",
     "start": "web-dev-server --open",
-    "prepublishOnly": "npm run build && npm run bundle",
+    "prepublishOnly": "npm run bundle",
     "bundle": "esbuild ./lib/index.js --format=esm --minify --external:pako --platform=neutral --bundle --outfile=./dist/index-min.js"
   
   },
